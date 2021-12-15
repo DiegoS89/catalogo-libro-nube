@@ -388,7 +388,7 @@ def editar_Autor():
 @app.route("/MisFavoritos")
 @login_required
 def misFavoritos():
-    Libros = Libro.query.join(Genero, Libro.id_genero == Genero.id_genero).join(Autor, Libro.id_autor == Autor.id_autor).join(Editorial, Libro.id_editorial == Editorial.id_editorial).join(MisFavoritos, Libro.id_libro == MisFavoritos.id_libro).add_columns(Genero.nombre_genero, Libro.titulo_libro, Libro.numero_paginas, Libro.formato, Autor.nombre_autor, Editorial.nombre_editorial, Libro.fecha_publicacion, Libro.volumen, Libro.id_libro, MisFavoritos.id_usuario, MisFavoritos.id_lista_favoritos)
+    Libros = Libro.query.join(Genero, Libro.id_genero == Genero.id_genero).join(Autor, Libro.id_autor == Autor.id_autor).join(Editorial, Libro.id_editorial == Editorial.id_editorial).join(MisFavoritos, Libro.id_libro == MisFavoritos.id_libro).add_columns(Genero.nombre_genero, Libro.titulo_libro, Libro.numero_paginas, Libro.formato, Autor.nombre_autor, Editorial.nombre_editorial, Libro.fecha_publicacion, Libro.volumen, Libro.id_libro, MisFavoritos.id_usuario, MisFavoritos.id_lista_favoritos, Libro.imgLibro)
 
     return render_template("misFavoritos.html", libros = Libros, iduser = current_user.id)
 

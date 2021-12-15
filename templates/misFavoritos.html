@@ -8,26 +8,28 @@
                 <table class="table is-bordered is-striped" style="width: 100%;" id="catalogo">
                     <thead>
                         <tr>
+                            <th>Imagen</th>
                             <th>Libro</th>
                             <th>Genero</th>
                             <th>Autor</th>
                             <th>Editorial</th>
                             <th>Numero de Paginas</th>
                             <th>Formato</th>
-                            <th>Formato</th>
+                            <th>Volumen</th>
                             <th>Fecha Publicacion</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>Imagen</th>
                             <th>Libro</th>
                             <th>Genero</th>
                             <th>Autor</th>
                             <th>Editorial</th>
                             <th>Numero de Paginas</th>
                             <th>Formato</th>
-                            <th>Formato</th>
+                            <th>Volumen</th>
                             <th>Fecha Publicacion</th>
                             <th>Eliminar</th>
                         </tr>
@@ -36,15 +38,16 @@
                         {% for libro in libros %}
                             {% if libro.id_usuario == iduser %}
                                 <tr>
-                                    <td>{{libro.titulo_libro}}</td>
-                                    <td>{{libro.nombre_genero}}</td>
-                                    <td>{{libro.nombre_autor}}</td>
-                                    <td>{{libro.nombre_editorial}}</td>
-                                    <td>{{libro.numero_paginas}}</td>
-                                    <td>{{libro.formato}}</td>
-                                    <td>{{libro.volumen}}</td>
-                                    <td>{{libro.fecha_publicacion}}</td>
-                                    <td><a class="fa fa-times-circle" style="font-size:25px" href="/quitarFavorito/{{libro.id_lista_favoritos}}"></a></td>
+                                    <td><img src="{{libro.imgLibro}}" alt="" border=3 height=15px width=45px></img></td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.titulo_libro}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.nombre_genero}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.nombre_autor}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.nombre_editorial}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.numero_paginas}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.formato}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.volumen}}</td>
+                                    <td style="text-align: center; vertical-align: middle;">{{libro.fecha_publicacion}}</td>
+                                    <td style="text-align: center; vertical-align: middle;"><a class="fa fa-times-circle" style="font-size:25px" href="/quitarFavorito/{{libro.id_lista_favoritos}}"></a></td>
                                 </tr>
                             {% endif %}
                         {% endfor %}

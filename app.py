@@ -9,7 +9,7 @@ login_manager.init_app(app)
 
 db = SQLAlchemy(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cxulgrmnebnqpt:3b525af9c5c9fd333bbea6c8886adb6efa16535c356bac39b08ea410c6686670@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d6t1tvr2oer58i'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://cxulgrmnebnqpt:3b525af9c5c9fd333bbea6c8886adb6efa16535c356bac39b08ea410c6686670@ec2-54-159-35-35.compute-1.amazonaws.com:5432/d6t1tvr2oer58i'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'SuperSecretKey'
 

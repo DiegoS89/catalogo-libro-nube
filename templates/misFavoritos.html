@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container is-fullhd is-fluid">
+            <form class="box">
+                <table class="table is-bordered is-striped" style="width: 100%;" id="catalogo">
+                    <thead>
+                        <tr>
+                            <th>Libro</th>
+                            <th>Genero</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Numero de Paginas</th>
+                            <th>Formato</th>
+                            <th>Formato</th>
+                            <th>Fecha Publicacion</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Libro</th>
+                            <th>Genero</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Numero de Paginas</th>
+                            <th>Formato</th>
+                            <th>Formato</th>
+                            <th>Fecha Publicacion</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for libro in libros %}
+                            {% if libro.id_usuario == iduser %}
+                                <tr>
+                                    <td>{{libro.titulo_libro}}</td>
+                                    <td>{{libro.nombre_genero}}</td>
+                                    <td>{{libro.nombre_autor}}</td>
+                                    <td>{{libro.nombre_editorial}}</td>
+                                    <td>{{libro.numero_paginas}}</td>
+                                    <td>{{libro.formato}}</td>
+                                    <td>{{libro.volumen}}</td>
+                                    <td>{{libro.fecha_publicacion}}</td>
+                                    <td><a class="fa fa-times-circle" style="font-size:25px" href="/quitarFavorito/{{libro.id_lista_favoritos}}"></a></td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $('#catalogo').DataTable();
+                    });
+                </script>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

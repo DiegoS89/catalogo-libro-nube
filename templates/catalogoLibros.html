@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container is-fullhd is-fluid">
+            <form class="box">
+                <table class="table is-bordered is-striped" style="width: 100%;" id="catalogo">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Libro</th>
+                            <th>Genero</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Numero de Paginas</th>
+                            <th>Formato</th>
+                            <th>Formato</th>
+                            <th>Fecha Publicacion</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
+                            <th>Favorito</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Libro</th>
+                            <th>Genero</th>
+                            <th>Autor</th>
+                            <th>Editorial</th>
+                            <th>Numero de Paginas</th>
+                            <th>Formato</th>
+                            <th>Formato</th>
+                            <th>Fecha Publicacion</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
+                            <th>Favorito</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for libro in libros %}
+                        <tr>
+                            <td><img src="{{libro.imgLibro}}" alt="" border=3 height=15px width=45px></img></td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.titulo_libro}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.nombre_genero}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.nombre_autor}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.nombre_editorial}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.numero_paginas}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.formato}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.volumen}}</td>
+                            <td style="text-align: center; vertical-align: middle;">{{libro.fecha_publicacion}}</td>
+                            <td style="text-align: center; vertical-align: middle;"><a class="fa fa-trash" style="font-size:25px" href="/eliminarLibro/{{libro.id_libro}}"></a></td>
+                            <td style="text-align: center; vertical-align: middle;"><a class="fa fa-edit" style="font-size:25px" href="/editarLibro/{{libro.id_libro}}"></a></td>
+                            <td style="text-align: center; vertical-align: middle;"><a class="fa fa-plus" style="font-size:25px" href="/agregarFavorito/{{libro.id_libro}}"></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $('#catalogo').DataTable();
+                    });
+                </script>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

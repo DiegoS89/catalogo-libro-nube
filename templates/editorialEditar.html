@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+
+                <div class="column">
+                    <form action="/editar_Editorial" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Agregar Editorial</label>
+                                        <input class="input" type="text" name="editorial" value="{{editoriales.nombre_editorial}}" placeholder="Editorial">
+                                    </p>
+                                </div>
+                                <input type="hidden" name="ideditorial" value="{{editoriales.id_editorial}}">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Editar Editorial">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,140 @@
+<html lang="en">
+
+
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table.dataTable thead, table.dataTable tfoot{
+            background-color: hsl(68, 35%, 66%);
+        }
+    </style>
+    <title>
+        Catalogo De Libros
+    </title>
+    {% endblock %}
+</head>
+
+{% block cuerpo %}
+
+<body>
+    <!-- <nav class="navbar is-fixed-top">
+        <a class="navbar-item" href="/addLibro">Agregar Libro</a>
+        <a class="navbar-item" href="/addGeneroEditorial">Agregar Genero o Editorial</a>
+    </nav> -->
+
+   
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="dropdown navigation">
+        <a class="navbar-item">
+            <img src="https://www.gandhi.com.mx/media/logo/stores/1/librerias-gandhi.png"
+                alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Libros
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/addLibro">
+                    Agregar Libro
+                </a>
+                <a class="navbar-item" href="/catalogo">
+                    Catalogo
+                </a>
+                <a class="navbar-item" href="/MisFavoritos">
+                    Mis Favoritos
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                    Version 0.6.2
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Editoriales
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/addGeneroEditorial">
+                    Agregar Genero o Editorial
+                </a>
+                <a class="navbar-item" href="/editoriales">
+                    Editoriales
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                    Version 0.6.2
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Autores
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/addAutor">
+                    Agregar Autor
+                </a>
+                <a class="navbar-item" href="/autores">
+                    Autores
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                    Version 0.6.2
+                </div>
+            </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                Generos
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item" href="/addGeneroEditorial">
+                    Agregar Genero o Editorial
+                </a>
+                <a class="navbar-item" href="/generos">
+                    Generos
+                </a>
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                    Version 0.6.2
+                </div>
+            </div>
+        </div>
+        <a class="navbar-item" href="/logout">
+            Cerrar Sesion
+        </a>
+    </nav>
+
+    {% block contenido %}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js"></script>
+    <div>
+
+
+    </div>
+    {% endblock %}
+
+    {% block pie %}
+    <div>
+        <footer>
+        </footer>
+    </div>
+    {% endblock %}
+</body>
+{% endblock %}
+
+
+
+</html>

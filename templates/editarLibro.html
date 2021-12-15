@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen">
+                    <form action="/editar_libro" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre del Libro</label>
+                                        <input class="input" type="text" name="nombreLibro"
+                                            value="{{libro.titulo_libro}}" placeholder="Ingrese el Nombre del Libro">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Cantidad de Paginas</label>
+                                        <input class="input" name="numeroLibro" type="number" min="0"
+                                            value="{{libro.numero_paginas}}" step="50"
+                                            placeholder="Ingrese el numero de Paginas">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Volumen</label>
+                                        <input class="input" type="number" name="volumen" min="0" step="1"
+                                            value="{{libro.volumen}}" placeholder="Volumen de la edicion">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Editorial</label>
+                                        <select class="input" value="{{libro.nombre_editorial}}" name="editorial">
+                                            {% for editorial in editoriales %}
+                                            {% if libro.id_editorial == editorial.id_editorial %}
+                                            <option selected value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}
+                                            </option>
+                                            {% else %}
+                                            <option value="{{editorial.id_editorial}}">{{editorial.nombre_editorial}}
+                                            </option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Imagen Libro</label>
+                                        <input class="input" type="text" name="img" value="{{libro.imgLibro}}"
+                                            placeholder="link a una imagen del libro">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Fecha de Publicacion</label>
+                                        <input class="input" type="date" value="{{libro.fecha_publicacion}}"
+                                            name="fecha" placeholder="Fecha de Publicacion">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Formato del Libro</label>
+                                        <select class="input" name="formato">
+                                            <option value="Digital">Digital</option>
+                                            <option value="Fisico">Fisico</option>
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Genero</label>
+                                        <select class="input" name="genero">
+                                            {% for genero in generos %}
+                                            <option value="{{genero.id_genero}}">{{genero.nombre_genero}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Autor</label>
+                                        <select class="input" value="{{libro.nombre_autor}}" name="autor">
+                                            {% for autor in autores %}
+                                            {% if libro.id_autor == autor.id_autor %}
+                                            <option selected value="{{autor.id_autor}}">{{autor.nombre_autor}}
+                                            </option>
+                                            {% else %}
+                                            <option value="{{autor.id_autor}}">{{autor.nombre_autor}}
+                                            </option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </p>
+                                </div>
+                                <input type="hidden" name="idlibro" value="{{libro.id_libro}}">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Editar Libro">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen ">
+                    <form action="/registrar_autor" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nombre del Autor</label>
+                                        <input class="input" type="text" name="nombreAutor"
+                                            placeholder="Ingrese el Nombre del Autor">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Fecha de Nacimiento</label>
+                                        <input class="input" type="date" name="fecha"
+                                            placeholder="Fecha de Nacimiento del Autor">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Nacionalidad</label>
+                                        <input class="input" name="nacionalidad" type="text"
+                                            placeholder="Nacionalidad del Autor">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Agregar Autor">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

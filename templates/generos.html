@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container is-fullhd is-fluid">
+            <form class="box">
+                <table class="table is-bordered is-striped" style="width: 100%;" id="catalogo">
+                    <thead>
+                        <tr>
+                            <th>Generos</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Generos</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        {% for genero in generos %}
+                        <tr>
+                            <td>{{genero.nombre_genero}}</td>
+                            <td><a class="fa fa-trash" style="font-size:25px" href="/eliminarGenero/{{genero.id_genero}}"></a></td>
+                            <td><a class="fa fa-edit" style="font-size:25px" href="/modificarGenero/{{genero.id_genero}}"></a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bulma.min.js"></script>
+                <script>
+                    $(document).ready(function () {
+                        $('#catalogo').DataTable();
+                    });
+                </script>
+            </form>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

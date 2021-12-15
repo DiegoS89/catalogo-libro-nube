@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+
+                <div class="column">
+                    <form action="/registrar_editorial" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Agregar Editorial</label>
+                                        <input class="input" type="text" name="editorial" placeholder="Editorial">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Agregar Editorial">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="column">
+                    <form action="/registrar_genero" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Agregar Genero</label>
+                                        <input class="input" type="text" name="genero" placeholder="Genero Literario">
+                                    </p>
+                                </div>
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Agregar Genero">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

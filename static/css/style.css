@@ -1,0 +1,23 @@
+.header-image {
+    background-image: url("https://img2.wallspic.com/originals/2/2/1/5/3/135122-estantes_de_libros_de_madera_marron_con_luces_encendidas_en_la_habitacion-3840x2160.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}
+
+.navbar {
+    background-color: transparent;
+    background-image: none;
+}
+
+.navbar-link{
+    background-color: white;
+    background-image: none;
+}
+
+.navbar-item{
+    background-color: white;
+    background-image: none;
+}

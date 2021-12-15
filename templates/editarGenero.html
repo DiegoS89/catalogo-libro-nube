@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<section class="hero is-primary is-fullheight header-image">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+
+                <div class="column">
+                    <form action="/editar_Genero" method="post" class="box">
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <label for="">Agregar Genero</label>
+                                        <input class="input" type="text" name="genero" value="{{genero.nombre_genero}}" placeholder="Editorial">
+                                    </p>
+                                </div>
+                                <input type="hidden" name="idgenero" value="{{genero.id_genero}}">
+                                <div class="field">
+                                    <p class="control is-expanded">
+                                        <input class="button is-success" type="submit" value="Editar Genero">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

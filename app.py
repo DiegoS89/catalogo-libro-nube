@@ -116,7 +116,7 @@ def login():
     consultaUsuario = Usuarios.query.filter_by(email=email).first()
     pass_cifrado = bcrypt.check_password_hash(consultaUsuario.password,password)
 
-    if bcrypt.check_password_hash(pass_cifrado, consultaUsuario.password)  :
+    if bcrypt.check_password_hash(consultaUsuario.password, password)  :
         return redirect("/catalogo",login_user(consultaUsuario))
     else:
         return redirect("/")
